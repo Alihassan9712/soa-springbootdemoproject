@@ -94,4 +94,18 @@ public class DoctorController
 		List<Doctor> doctors = service.displayDoctorsByGender(gender);
 		return ResponseEntity.status(200).body(doctors);
 	}
+	
+	//Doctor COunt
+	@GetMapping("/count")
+	public ResponseEntity<String> doctorcount() {
+		
+		Long count = service.doctorCount();
+		String msg = "Total Doctors="+count;
+		return ResponseEntity.ok(msg);
+		
+	}
+	
 }
+	
+
+	
